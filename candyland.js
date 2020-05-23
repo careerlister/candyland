@@ -1,7 +1,10 @@
-const { promisify } = require('util');
-const sleep = promisify(setTimeout);
-
 (async() => {
+
+    const sleep = (ms) => {
+        // SIMPLE SLEEP FUNCTION THAT RUNS IN BOTH NODE AND BROWSER
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     // YOUNGEST GOES FIRST - ORDER OF AGE
     const players = [{
         name: 'Ansley',
